@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menuToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:overScrollMode="never">
+
+    <include android:id="@+id/logged_in_header" layout="@layout/header_logged_in" android:visibility="gone"/>
+    <include android:id="@+id/logged_out_header" layout="@layout/header_logged_out" android:visibility="visible" />
+
+
+    <carbon.widget.RelativeLayout
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:onClick="home"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/icon_home"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_home"/>
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gradient_end"
+            android:text="@string/home"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/icon_home"
+            android:textSize="22sp"
+            />
+
+
+    </carbon.widget.RelativeLayout>
+    <carbon.widget.RelativeLayout
+        android:id="@+id/reservations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:onClick="reservations"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/icon_reservation"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_reservation"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gradient_end"
+            android:text="@string/reservations"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/icon_reservation"
+            android:textSize="22sp"
+            />
+
+
+    </carbon.widget.RelativeLayout>
+
+</carbon.widget.LinearLayout>

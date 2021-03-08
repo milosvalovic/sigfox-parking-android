@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/sigfox_gradient"
+    app:carbon_cornerRadius="12dp"
+    app:carbon_elevation="5dp">
+
+
+    <carbon.widget.LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/carbon_white_70"
+        android:orientation="vertical">
+
+        <carbon.widget.RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <carbon.widget.TextView
+                android:id="@+id/parkingLotName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:text="Názov"
+                android:textColor="@color/gradient_end"
+                android:layout_toStartOf="@id/delete"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_close"
+                app:tint="@color/red_gradient_end" />
+        </carbon.widget.RelativeLayout>
+
+        <carbon.widget.TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:text="Dátum"
+            android:textColor="@color/carbon_blueGrey_500"
+            android:textSize="15sp" />
+
+        <carbon.widget.TextView
+            android:id="@+id/car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:text="Vozidlo"
+            android:textColor="@color/carbon_blueGrey_500"
+            android:textSize="15sp" />
+
+        <carbon.widget.LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-7dp"
+                android:src="@drawable/icon_position" />
+
+            <carbon.widget.TextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="2dp"
+                android:text="Adresa"
+                android:textColor="@color/carbon_blueGrey_500"
+                android:textSize="15sp" />
+
+        </carbon.widget.LinearLayout>
+
+
+    </carbon.widget.LinearLayout>
+
+
+</carbon.widget.RelativeLayout>

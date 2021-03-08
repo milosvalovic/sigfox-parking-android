@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/sigfox_gradient">
+    <carbon.widget.RelativeLayout
+        android:id="@+id/menuToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/closeMenu"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:onClick="closeMenu"
+            android:src="@drawable/icon_back"/>
+
+    </carbon.widget.RelativeLayout>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        />
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        />
+
+    <carbon.widget.RelativeLayout
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/red_button"
+        android:onClick="logout"
+        app:carbon_cornerRadius="10dp">
+
+        <carbon.widget.TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/logout"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </carbon.widget.RelativeLayout>
+
+
+
+</carbon.widget.LinearLayout>

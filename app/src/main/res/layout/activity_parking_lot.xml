@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.main.ParkingLotActivity">
+
+    <carbon.widget.LinearLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sigfox_gradient"
+        android:orientation="vertical"
+        app:carbon_elevation="5dp">
+
+        <carbon.widget.RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:padding="5dp"
+            app:carbon_cornerRadius="12dp">
+
+            <ImageView
+                android:id="@+id/positionIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_back" />
+
+
+        </carbon.widget.RelativeLayout>
+
+    </carbon.widget.LinearLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar"
+        android:fillViewport="true">
+
+        <carbon.widget.LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <carbon.widget.RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/sigfox_gradient"
+                app:carbon_cornerRadius="12dp"
+                app:carbon_elevation="5dp">
+
+
+                <carbon.widget.LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/carbon_white_70"
+                    android:orientation="vertical">
+
+                    <carbon.widget.TextView
+                        android:id="@+id/parkingLotName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="Názov"
+                        android:textColor="@color/gradient_end"
+                        android:textSize="20sp" />
+
+                    <carbon.widget.TextView
+                        android:id="@+id/partner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="Partner"
+                        android:textColor="@color/carbon_blueGrey_500"
+                        android:textSize="15sp" />
+
+                    <carbon.widget.LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="-7dp"
+                            android:src="@drawable/icon_position" />
+
+                        <carbon.widget.TextView
+                            android:id="@+id/address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="2dp"
+                            android:text="Adresa"
+                            android:textColor="@color/carbon_blueGrey_500"
+                            android:textSize="15sp" />
+
+                    </carbon.widget.LinearLayout>
+
+                    <carbon.widget.LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="horizontal">
+
+                        <carbon.widget.RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/distanceIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/icon_distance" />
+
+                            <carbon.widget.TextView
+                                android:id="@+id/distance"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="2dp"
+                                android:layout_toEndOf="@id/distanceIcon"
+                                android:text="50 km"
+                                android:textColor="@color/carbon_blueGrey_500"
+                                android:textSize="15sp" />
+
+
+                        </carbon.widget.RelativeLayout>
+
+
+                        <carbon.widget.RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/capacityIcon"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/icon_capacity" />
+
+                            <carbon.widget.TextView
+                                android:id="@+id/capacity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="2dp"
+                                android:layout_toEndOf="@id/capacityIcon"
+                                android:text="5/10"
+                                android:textColor="@color/carbon_blueGrey_500"
+                                android:textSize="15sp" />
+
+
+                        </carbon.widget.RelativeLayout>
+
+                        <carbon.widget.RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/chargerIcon"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_flash" />
+
+                            <carbon.widget.TextView
+                                android:id="@+id/charger"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="2dp"
+                                android:layout_toEndOf="@id/chargerIcon"
+                                android:text="Nie"
+                                android:textColor="@color/carbon_blueGrey_500"
+                                android:textSize="15sp" />
+
+
+                        </carbon.widget.RelativeLayout>
+
+
+                    </carbon.widget.LinearLayout>
+
+                    <carbon.widget.RelativeLayout
+                        android:id="@+id/notifyMe"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_margin="15dp"
+                        android:background="@drawable/red_button"
+                        app:carbon_cornerRadius="10dp">
+
+                        <carbon.widget.TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="@string/norify_when_free"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                    </carbon.widget.RelativeLayout>
+
+                </carbon.widget.LinearLayout>
+
+
+            </carbon.widget.RelativeLayout>
+
+            <carbon.widget.TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/description"
+                android:textAlignment="center"
+                android:textColor="@color/gradient_end"
+                android:textSize="20sp" />
+
+            <carbon.widget.TextView
+                android:id="@+id/descritpionContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <carbon.widget.RelativeLayout
+                android:id="@+id/showMoreDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:focusable="false">
+
+                <carbon.widget.TextView
+                    android:id="@+id/showMoreDescriptionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/show_more"
+                    android:textColor="@color/gradient_start"
+                    android:textSize="14sp" />
+            </carbon.widget.RelativeLayout>
+
+            <fragment
+                android:id="@+id/mapView"
+                class="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                />
+
+            <carbon.widget.RelativeLayout
+                android:id="@+id/navigate"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/sigfox_gradient"
+                app:carbon_elevation="5dp"
+                app:carbon_cornerRadius="10dp">
+
+                <carbon.widget.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/navigate"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+            </carbon.widget.RelativeLayout>
+
+            <carbon.widget.RelativeLayout
+                android:id="@+id/showAR"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/sigfox_gradient"
+                app:carbon_elevation="5dp"
+                app:carbon_cornerRadius="10dp">
+
+                <carbon.widget.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/show_in_ar"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+            </carbon.widget.RelativeLayout>
+
+
+
+            <carbon.widget.TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/parking_spots"
+                android:textAlignment="center"
+                android:textColor="@color/gradient_end"
+                android:textSize="20sp" />
+
+            <carbon.widget.LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/parkingSpots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/loading"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/loading" />
+
+
+            </carbon.widget.LinearLayout>
+
+
+        </carbon.widget.LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</carbon.widget.RelativeLayout>

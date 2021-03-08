@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activities.auth.LoginActivity">
+
+    <carbon.widget.RelativeLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sigfox_gradient"
+        android:orientation="vertical"
+        app:carbon_elevation="5dp">
+
+        <carbon.widget.RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/appbar"
+            >
+
+            <carbon.widget.RelativeLayout
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                android:onClick="back"
+                app:carbon_cornerRadius="12dp">
+
+                <ImageView
+                    android:id="@+id/positionIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_back" />
+
+
+            </carbon.widget.RelativeLayout>
+
+            <carbon.widget.TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/car_adding"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+        </carbon.widget.RelativeLayout>
+
+    </carbon.widget.RelativeLayout>
+
+    <carbon.widget.LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+        <carbon.widget.RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="5dp"
+            app:carbon_cornerRadius="10dp"
+            app:carbon_stroke="@color/gradient_start"
+            app:carbon_strokeWidth="2dp"
+            android:background="@drawable/sigfox_input_gradient">
+
+            <EditText
+                android:id="@+id/brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/hint_gray"
+                android:background="@color/transparent"
+                android:inputType="textCapWords|text"
+                android:textColor="@color/gradient_end"
+                android:layout_margin="10dp"
+                android:hint="@string/brand" />
+        </carbon.widget.RelativeLayout>
+
+        <carbon.widget.RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:carbon_cornerRadius="10dp"
+            app:carbon_stroke="@color/gradient_start"
+            app:carbon_strokeWidth="2dp"
+            android:background="@drawable/sigfox_input_gradient">
+
+            <EditText
+                android:id="@+id/model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/hint_gray"
+                android:background="@color/transparent"
+                android:inputType="textCapWords|text"
+                android:textColor="@color/gradient_end"
+                android:layout_margin="10dp"
+                android:hint="@string/model" />
+        </carbon.widget.RelativeLayout>
+
+        <carbon.widget.RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="5dp"
+            app:carbon_cornerRadius="10dp"
+            app:carbon_stroke="@color/gradient_start"
+            app:carbon_strokeWidth="2dp"
+            android:background="@drawable/sigfox_input_gradient">
+
+            <EditText
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/hint_gray"
+                android:background="@color/transparent"
+                android:inputType="date"
+                android:textColor="@color/gradient_end"
+                android:layout_margin="10dp"
+                android:hint="@string/year" />
+        </carbon.widget.RelativeLayout>
+        <carbon.widget.RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="5dp"
+            app:carbon_cornerRadius="10dp"
+            app:carbon_stroke="@color/gradient_start"
+            app:carbon_strokeWidth="2dp"
+            android:background="@drawable/sigfox_input_gradient">
+
+            <EditText
+                android:id="@+id/plate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/hint_gray"
+                android:background="@color/transparent"
+                android:inputType="textCapCharacters"
+                android:textColor="@color/gradient_end"
+                android:layout_margin="10dp"
+                android:hint="@string/licance_plate" />
+        </carbon.widget.RelativeLayout>
+
+        <carbon.widget.RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="5dp"
+            app:carbon_cornerRadius="10dp"
+            app:carbon_stroke="@color/gradient_start"
+            app:carbon_strokeWidth="2dp"
+            android:background="@drawable/sigfox_input_gradient">
+
+            <EditText
+                android:id="@+id/color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/hint_gray"
+                android:background="@color/transparent"
+                android:inputType="textCapCharacters"
+                android:textColor="@color/gradient_end"
+                android:layout_margin="10dp"
+                android:hint="@string/color" />
+        </carbon.widget.RelativeLayout>
+
+        <carbon.widget.RelativeLayout
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sigfox_gradient"
+            app:carbon_cornerRadius="10dp">
+
+            <carbon.widget.TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/add"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </carbon.widget.RelativeLayout>
+
+
+
+    </carbon.widget.LinearLayout>
+
+
+</carbon.widget.LinearLayout>

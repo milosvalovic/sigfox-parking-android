@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.main.ARFragment">
+
+    <FrameLayout
+        android:id="@+id/camera_container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <carbon.widget.RelativeLayout
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="40dp"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.75"
+        android:background="@drawable/sigfox_gradient"
+        android:visibility="gone"
+        app:carbon_cornerRadius="12dp"
+        app:carbon_elevation="5dp">
+
+
+        <carbon.widget.LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/carbon_white_70"
+            android:orientation="vertical">
+
+            <carbon.widget.TextView
+                android:id="@+id/parkingLotName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:text="Názov"
+                android:textColor="@color/gradient_end"
+                android:textSize="20sp" />
+
+            <carbon.widget.TextView
+                android:id="@+id/partner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:text="Partner"
+                android:textColor="@color/carbon_blueGrey_500"
+                android:textSize="15sp" />
+
+
+            <carbon.widget.LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <carbon.widget.RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/distanceIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/icon_distance" />
+
+                    <carbon.widget.TextView
+                        android:id="@+id/distance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="2dp"
+                        android:layout_toEndOf="@id/distanceIcon"
+                        android:text="50 km"
+                        android:textColor="@color/carbon_blueGrey_500"
+                        android:textSize="15sp" />
+
+
+                </carbon.widget.RelativeLayout>
+
+
+                <carbon.widget.RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/capacityIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/icon_capacity" />
+
+                    <carbon.widget.TextView
+                        android:id="@+id/capacity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="2dp"
+                        android:layout_toEndOf="@id/capacityIcon"
+                        android:text="5/10"
+                        android:textColor="@color/carbon_blueGrey_500"
+                        android:textSize="15sp" />
+
+
+                </carbon.widget.RelativeLayout>
+
+                <carbon.widget.RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/chargerIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_flash" />
+
+                    <carbon.widget.TextView
+                        android:id="@+id/charger"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="2dp"
+                        android:layout_toEndOf="@id/chargerIcon"
+                        android:text="Nie"
+                        android:textColor="@color/carbon_blueGrey_500"
+                        android:textSize="15sp" />
+
+
+                </carbon.widget.RelativeLayout>
+
+
+            </carbon.widget.LinearLayout>
+
+
+        </carbon.widget.LinearLayout>
+
+        <carbon.widget.RelativeLayout
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_close" />
+
+        </carbon.widget.RelativeLayout>
+
+    </carbon.widget.RelativeLayout>
+</carbon.widget.RelativeLayout>
