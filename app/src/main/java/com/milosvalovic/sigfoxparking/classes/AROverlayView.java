@@ -169,7 +169,8 @@ public class AROverlayView extends View {
                             String json = act.gson.toJson(item);
                             i.putExtra("json", json);
                             act.startActivity(i);*/
-                            Uri gmmIntentUri = Uri.parse("google.route:q=" + item.parking_lot_lat + "," + item.parking_lot_lng);
+
+                            Uri gmmIntentUri = Uri.parse("google.navigation:q=" + item.parking_lot_lat + "," + item.parking_lot_lng);
                             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                             mapIntent.setPackage("com.google.android.apps.maps");
                             ((ARActivity)act).startActivity(mapIntent);

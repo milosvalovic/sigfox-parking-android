@@ -204,7 +204,7 @@ public class ParkingLotActivity extends BaseActivity implements OnMapReadyCallba
         binding.navigate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri gmmIntentUri = Uri.parse("google.route:q=" + parkingLot.parking_lot_lat + "," + parkingLot.parking_lot_lng);
+                Uri gmmIntentUri = Uri.parse("google.navigation:q=" + parkingLot.parking_lot_lat + "," + parkingLot.parking_lot_lng);
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
