@@ -8,6 +8,7 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,6 +19,7 @@ import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -269,6 +271,16 @@ public class BaseActivity extends AppCompatActivity {
 
     public void back(View view){
         finish();
+    }
+
+    public void report(View view){
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+        emailIntent.setData(Uri.parse("mailto:report@valovic.studenthosting.sk?&subject=Nahlásenie"));
+        try {
+            startActivity(emailIntent);
+        } catch (ActivityNotFoundException e) {
+        }
+
     }
 
     public void login(View view) {

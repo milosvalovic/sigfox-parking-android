@@ -64,4 +64,5 @@
     <string name="reservation_created">Rezrvácia vytvorená. Svoju rezerváciu môžete zrušiť v Rezrváciach, v Menu.</string>
     <string name="show_in_ar">Zobraziť pomocou AR</string>
     <string name="my_reservations">Moje Rezervácie</string>
+    <string name="report">Nahlásiť</string>
 </resources>
