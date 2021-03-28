@@ -1,6 +1,7 @@
 package com.milosvalovic.sigfoxparking.classes;
 
 import android.location.Location;
+import android.util.Log;
 
 /**
  * Created by ntdat on 1/13/17.
@@ -13,7 +14,7 @@ public class LocationHelper {
     public static float[] WSG84toECEF(Location location) {
         double radLat = Math.toRadians(location.getLatitude());
         double radLon = Math.toRadians(location.getLongitude());
-
+        Log.e("LAT2", ""+location.getLatitude());
         float clat = (float) Math.cos(radLat);
         float slat = (float) Math.sin(radLat);
         float clon = (float) Math.cos(radLon);
@@ -32,16 +33,20 @@ public class LocationHelper {
         double radLat = Math.toRadians(currentLocation.getLatitude());
         double radLon = Math.toRadians(currentLocation.getLongitude());
 
+        Log.e("LAT", ""+currentLocation.getLatitude());
+
         float clat = (float) Math.cos(radLat);
         float slat = (float) Math.sin(radLat);
         float clon = (float) Math.cos(radLon);
         float slon = (float) Math.sin(radLon);
 
-        float dx = ecefCurrentLocation[0] - ecefPOI[0];
+        float dx = (float) (ecefCurrentLocation[0] - ecefPOI[0] );
         float dy = ecefCurrentLocation[1] - ecefPOI[1];
         float dz = ecefCurrentLocation[2] - ecefPOI[2];
 
-        float east = -slon*dx + clon*dy;
+        //Východ s korekciou
+
+        float east = (float) ((-slon*dx + clon*dy ));
 
         float north = -slat*clon*dx - slat*slon*dy + clat*dz;
 

@@ -47,7 +47,7 @@
     <string name="currently_occupied">Aktualne: Obsadené</string>
     <string name="reservation">Rezervácia</string>
     <string name="unknown">Neznáma</string>
-    <string name="reservation_description">Rezerváciu môžete vytvoriť na hociktorý nasledujúci deň, pokiaľ je voľný. Pokiaľ nieje parkovacie miesto nie je voľné môžete skúsiť ďalšie parkovacie miesto. Rezerváciu môžete zrušiť maximálne deň pred tým ako ste chcecli parkovať.<br></br> Informácie o vozidle, ktorým budete parkovať potrebujeme, kvôli kontrole.</string>
+    <string name="reservation_description">Rezerváciu môžete vytvoriť na hociktorý nasledujúci deň, pokiaľ je voľný. Pokiaľ parkovacie miesto nie je voľné môžete skúsiť ďalšie parkovacie miesto. Rezerváciu môžete zrušiť maximálne deň pred tým ako ste chcecli parkovať.<br></br> Informácie o vozidle, ktorým budete parkovať potrebujeme, kvôli kontrole.</string>
     <string name="pick_car">Vyberte auto:</string>
     <string name="add_car">Pridať auto</string>
     <string name="car_not_picked">Musíte vybrať vozidlo, ktorým chcete zaparkovať</string>
@@ -65,4 +65,7 @@
     <string name="show_in_ar">Zobraziť pomocou AR</string>
     <string name="my_reservations">Moje Rezervácie</string>
     <string name="report">Nahlásiť</string>
+    <string name="currently_reserved">Aktuálne: Rezervované</string>
+    <string name="please_login">Pre rezervovanie musíte byť prihláseny</string>
+    <string name="warning">Pozor!</string>
 </resources>

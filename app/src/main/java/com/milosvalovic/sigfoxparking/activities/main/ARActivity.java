@@ -25,7 +25,8 @@ public class ARActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityARBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        LAT = getIntent().getDoubleExtra("lat",0.0);
+        LNG = getIntent().getDoubleExtra("lng",0.0);
         offsetAppbar(binding.appbar);
         String json = getIntent().getStringExtra("json");
         data.add(gson.fromJson(json, ParkingLot.class));

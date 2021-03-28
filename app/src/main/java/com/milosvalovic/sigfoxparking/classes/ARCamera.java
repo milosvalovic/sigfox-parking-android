@@ -144,6 +144,7 @@ public class ARCamera extends ViewGroup implements SurfaceHolder.Callback {
         }
 
         int orientation;
+        ;
         if(info.facing== Camera.CameraInfo.CAMERA_FACING_FRONT){
             orientation = (info.orientation + degrees) % 360;
             orientation =  (360 - orientation) % 360;

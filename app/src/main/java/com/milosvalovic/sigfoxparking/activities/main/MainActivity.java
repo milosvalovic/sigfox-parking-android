@@ -16,6 +16,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
@@ -202,6 +203,8 @@ public class MainActivity extends BaseActivity {
             LAT = place.getLatLng().latitude;
             LNG = place.getLatLng().longitude;
             name = place.getName();
+
+
             reloadData();
         }
     }

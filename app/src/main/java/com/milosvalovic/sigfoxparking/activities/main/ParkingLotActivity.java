@@ -142,7 +142,7 @@ public class ParkingLotActivity extends BaseActivity implements OnMapReadyCallba
         binding.capacity.setText(String.format(Locale.getDefault(),"%d/%d",parkingLot.getOccupiedSpots(), parkingLot.parking_lot_total_spots ));
         binding.distance.setText(String.format(Locale.getDefault(),"%.1f",parkingLot.distance ));
         binding.address.setText(String.format(Locale.getDefault(), "%s, %s %s" , parkingLot.parking_lot_city, parkingLot.parking_lot_street, parkingLot.parking_lot_street_number));
-        if(parkingLot.parking_lot_total_spots - parkingLot.parking_lot_occupied_spots == 0){
+        if(parkingLot.parking_lot_total_spots - parkingLot.getOccupiedSpots() == 0){
             binding.notifyMe.setVisibility(View.VISIBLE);
         } else {
             binding.notifyMe.setVisibility(View.GONE);

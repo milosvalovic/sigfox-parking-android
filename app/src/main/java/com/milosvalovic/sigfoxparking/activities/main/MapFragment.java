@@ -118,7 +118,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 ParkingLot item = act.data.get(Integer.parseInt("" + marker.getTag()));
                 binding.parkingLotName.setText(item.parking_lot_name);
                 binding.partner.setText(item.partner.partner_name);
-                binding.capacity.setText(String.format(Locale.getDefault(),"%d/%d",item.parking_lot_available_spots, item.parking_lot_total_spots ));
+                binding.capacity.setText(String.format(Locale.getDefault(),"%d/%d",item.getOccupiedSpots(), item.parking_lot_total_spots ));
                 binding.distance.setText(String.format(Locale.getDefault(),"%.1f km",item.distance ));
                 binding.info.setOnClickListener(new View.OnClickListener() {
                     @Override

@@ -66,7 +66,7 @@ public class ARFragment extends Fragment implements SensorEventListener, Locatio
 
     private LocationManager locationManager;
     public Location location = new Location("ARPoint");
-    private float declination;
+    private float declination ;
     ARActivity act;
 
     FragmentARBinding binding;
