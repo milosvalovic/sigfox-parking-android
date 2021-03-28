@@ -47,6 +47,10 @@ import com.milosvalovic.sigfoxparking.classes.views.CustomDrawerLayout;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
@@ -352,5 +356,28 @@ public class BaseActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static String currentDateTime(){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date time = Calendar.getInstance().getTime();
+        return format.format(time);
+    }
+
+    public boolean isDateBeforeToday(String startDateTime, String format){
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        Date strDateStart = null;
+        Date currentTime = null;
+        try {
+            strDateStart = sdf.parse(startDateTime);
+            currentTime = sdf.parse(currentDateTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        assert strDateStart != null;
+        if (strDateStart.before(currentTime)) {
+            return true;
+        }
+        return false;
     }
 }

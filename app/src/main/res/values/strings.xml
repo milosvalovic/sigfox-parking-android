@@ -68,4 +68,8 @@
     <string name="currently_reserved">Aktuálne: Rezervované</string>
     <string name="please_login">Pre rezervovanie musíte byť prihláseny</string>
     <string name="warning">Pozor!</string>
+    <string name="reservation_delete_success">Rezerváciu sa podarilo úspešne zmazať</string>
+    <string name="reservation_delete_failed">Rezervácie sa nepodarilo zmazať</string>
+    <string name="question_delete_reservation">Naozaj si želáte zrušiť rezerváciu?</string>
+    <string name="cancel">Zrušiť rezerváciu</string>
 </resources>

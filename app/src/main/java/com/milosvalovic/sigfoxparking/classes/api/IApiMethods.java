@@ -58,6 +58,9 @@ public interface IApiMethods {
     @GET("reservation/list")
     Call<ReservationsResponse> myReservations();
 
+    @GET("reservation/delete/{id}")
+    Call<ResponseObject> deleteReservation(int id);
+
 
     @FormUrlEncoded
     @POST("parking_lot/detail")
