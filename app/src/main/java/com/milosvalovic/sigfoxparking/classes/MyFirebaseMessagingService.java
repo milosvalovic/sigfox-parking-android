@@ -106,7 +106,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     .setContentIntent(pendingIntent)
                     .setContentTitle(remoteMessage.getNotification().getTitle())
                     .setContentText(remoteMessage.getNotification().getBody())
-                    .setSmallIcon(R.drawable.parking_marker)
+                    .setSmallIcon(R.drawable.ic_parking_sign)
                     .setChannelId("fcm_default_channel")
                     .setVisibility(VISIBILITY_PUBLIC)
                     .addExtras(intent.getExtras())
@@ -123,7 +123,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     .setContentIntent(pendingIntent)
                     .setContentTitle(remoteMessage.getNotification().getTitle())
                     .setContentText(remoteMessage.getNotification().getBody())
-                    .setSmallIcon(R.drawable.parking_marker)
+                    .setSmallIcon(R.drawable.ic_parking_sign)
                     .setVisibility(VISIBILITY_PUBLIC)
                     .addExtras(intent.getExtras())
                     .build();

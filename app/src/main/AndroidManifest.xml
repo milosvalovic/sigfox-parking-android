@@ -13,9 +13,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_parking_sign"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_parking_sign"
         android:supportsRtl="true"
         android:theme="@style/Theme.SigfoxParking">
         <activity android:name=".activities.reservation.MyReservationsActivity"></activity>
@@ -38,6 +38,18 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/api_key" />
+        <service
+            android:name=".classes.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_parking_sign" />
     </application>
+
 
 </manifest>

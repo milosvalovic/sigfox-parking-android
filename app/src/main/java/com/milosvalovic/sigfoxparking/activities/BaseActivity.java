@@ -298,7 +298,7 @@ public class BaseActivity extends AppCompatActivity {
         setDrawer(drawer);
         drawer.closeDrawers();
         //FirebaseMessaging.getInstance().unsubscribeFromTopic("news");
-        if (this instanceof ReservationActivity) finish();
+        if (this instanceof MyReservationsActivity) finish();
 
     }
 
