@@ -44,7 +44,8 @@ public class LoginActivity extends BaseActivity {
         binding.register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                Intent intent = new Intent(LoginActivity.this,
+                        RegistrationActivity.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +57,8 @@ public class LoginActivity extends BaseActivity {
         Call<UserResponse> call = methods.login(email, password);
         call.enqueue(new Callback<UserResponse>() {
             @Override
-            public void onResponse(@NotNull Call<UserResponse> call, @NotNull Response<UserResponse> response) {
+            public void onResponse(@NotNull Call<UserResponse> call,
+                                   @NotNull Response<UserResponse> response) {
                 if(response.isSuccessful()){
                     assert response.body() != null;
                     storeUser(response.body().data);

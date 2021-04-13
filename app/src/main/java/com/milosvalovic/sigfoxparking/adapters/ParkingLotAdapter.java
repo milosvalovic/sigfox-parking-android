@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.milosvalovic.sigfoxparking.R;
@@ -26,6 +29,9 @@ public class ParkingLotAdapter extends RecyclerView.Adapter<ParkingLotAdapter.Vi
     private LayoutInflater inflater;
 
     public ParkingLotAdapter(MainActivity act) {
+
+
+
         this.act = act;
     }
 
@@ -69,12 +75,23 @@ public class ParkingLotAdapter extends RecyclerView.Adapter<ParkingLotAdapter.Vi
         holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ActivityOptionsCompat activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        act,
+
+                        // Now we provide a list of Pair items which contain the view we can transitioning
+                        // from, and the name of the view it is transitioning to, in the launched activity
+                        new Pair<>(holder.binding.getRoot(),"LOT_VIEW"));
+
+                // Now we can start the Activity, providing the activity options as a bundle
+                //ActivityCompat.startActivity(MainActivity.this, intent, activityOptions.toBundle());
+
+
                 Intent i = new Intent( act, ParkingLotActivity.class);
                 i.putExtra("lat", act.LAT);
                 i.putExtra("lng", act.LNG);
                 String json = act.gson.toJson(item);
                 i.putExtra("json", json);
-                act.startActivity(i);
+                ActivityCompat.startActivity(act, i, activityOptions.toBundle());
             }
         });
     }

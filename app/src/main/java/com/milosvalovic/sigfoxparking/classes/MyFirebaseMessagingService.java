@@ -11,6 +11,7 @@ import android.os.Build;
 import android.util.Log;
 
 import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -102,14 +103,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             setupChannel();
-            Notification notif = new Builder(this)
+            Notification notif = new NotificationCompat.Builder(this)
                     .setContentIntent(pendingIntent)
                     .setContentTitle(remoteMessage.getNotification().getTitle())
-                    .setContentText(remoteMessage.getNotification().getBody())
                     .setSmallIcon(R.drawable.ic_parking_sign)
                     .setChannelId("fcm_default_channel")
-                    .setVisibility(VISIBILITY_PUBLIC)
                     .addExtras(intent.getExtras())
+                    .setStyle(new NotificationCompat.BigTextStyle()
+                            .bigText(remoteMessage.getNotification().getBody()))
                     .build();
             notif.flags |= FLAG_AUTO_CANCEL;
 
@@ -119,13 +120,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 startForeground(1, notif);
             }*/
         } else{
-            Notification notif = new Builder(this)
+            Notification notif = new NotificationCompat.Builder(this)
                     .setContentIntent(pendingIntent)
                     .setContentTitle(remoteMessage.getNotification().getTitle())
                     .setContentText(remoteMessage.getNotification().getBody())
                     .setSmallIcon(R.drawable.ic_parking_sign)
-                    .setVisibility(VISIBILITY_PUBLIC)
+                    .setChannelId("fcm_default_channel")
                     .addExtras(intent.getExtras())
+                    .setStyle(new NotificationCompat.BigTextStyle()
+                            .bigText(remoteMessage.getNotification().getBody()))
                     .build();
             notif.flags |= FLAG_AUTO_CANCEL;
             notificationManager.notify(1, notif);

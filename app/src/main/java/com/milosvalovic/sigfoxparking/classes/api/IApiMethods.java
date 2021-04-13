@@ -59,7 +59,7 @@ public interface IApiMethods {
     Call<ReservationsResponse> myReservations();
 
     @GET("reservation/delete/{id}")
-    Call<ResponseObject> deleteReservation(int id);
+    Call<ResponseObject> deleteReservation(@Path("id") int id);
 
 
     @FormUrlEncoded

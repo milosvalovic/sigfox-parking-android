@@ -95,6 +95,8 @@ public class ReservationActivity extends BaseActivity implements DatePickerDialo
                 now.get(Calendar.MONTH), // Initial month selection
                 now.get(Calendar.DAY_OF_MONTH) // Inital day selection
         );
+        dpd.setFirstDayOfWeek(2);
+        dpd.setLocale(Locale.getDefault());
         dpd.setDisabledDays(blockedDates);
         dpd.setMinDate(now);
 

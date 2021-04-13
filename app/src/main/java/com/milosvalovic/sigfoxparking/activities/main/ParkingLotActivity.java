@@ -3,6 +3,7 @@ package com.milosvalovic.sigfoxparking.activities.main;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -63,13 +64,16 @@ public class ParkingLotActivity extends BaseActivity implements OnMapReadyCallba
         setContentView(binding.getRoot());
         intent = getIntent();
 
+        ViewCompat.setTransitionName(binding.mainContainer, "LOT_VIEW");
+
         LAT = intent.getDoubleExtra("lat",0.0);
         LNG = intent.getDoubleExtra("lng",0.0);
 
         String json = intent.getStringExtra("json");
-        if (json != null)
+        if (json != null) {
+            binding.scrollView.setVisibility(View.VISIBLE);
             setLayout(parkingLot = gson.fromJson(json, ParkingLot.class));
-        else {
+        } else {
             loadDetail(intent.getIntExtra("parkingLotID",0));
         }
 
@@ -253,6 +257,7 @@ public class ParkingLotActivity extends BaseActivity implements OnMapReadyCallba
                         parkingLot = response.body().data;
                         setLayout(response.body().data);
                         onMapReady(map);
+                        binding.scrollView.setVisibility(View.VISIBLE);
                     }
                 } else {
                     retroResponseError(ParkingLotActivity.this,response);

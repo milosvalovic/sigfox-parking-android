@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.milosvalovic.sigfoxparking.R;
@@ -89,12 +92,20 @@ public class ReservationsAdapter extends RecyclerView.Adapter<ReservationsAdapte
         holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ActivityOptionsCompat activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        act,
+
+                        // Now we provide a list of Pair items which contain the view we can transitioning
+                        // from, and the name of the view it is transitioning to, in the launched activity
+                        new Pair<>(holder.binding.getRoot(),"LOT_VIEW"));
+
                 Intent i = new Intent(act, ParkingLotActivity.class);
                 i.putExtra("lat", act.LAT);
                 Log.e("Lat", act.LAT + "");
                 i.putExtra("lng", act.LNG);
                 i.putExtra("parkingLotID", item.parking_lot.parking_lot_id);
-                act.startActivity(i);
+                //act.startActivity(i);
+                ActivityCompat.startActivity(act, i, activityOptions.toBundle());
             }
         });
 
@@ -119,14 +130,15 @@ public class ReservationsAdapter extends RecyclerView.Adapter<ReservationsAdapte
                         }
                     }).setPositiveButton(act.getString(R.string.yes), (dialogInterface, i) -> {
                 act.loading.show();
-                Call<ResponseObject> call = act.methods.deleteReservation(item.reservation_id);
+                Call<ResponseObject> call = act.methods.deleteReservation(item.reserve_id);
                 call.enqueue(new Callback<ResponseObject>() {
                     @Override
                     public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
                         if (response.isSuccessful()) {
                             if (response.body().result) {
                                 Toast.makeText(act, R.string.reservation_delete_success, Toast.LENGTH_LONG).show();
-
+                                data.remove(position);
+                                notifyItemRemoved(position);
                             }
                         } else {
                             Toast.makeText(act, R.string.reservation_delete_failed, Toast.LENGTH_LONG).show();
@@ -145,7 +157,7 @@ public class ReservationsAdapter extends RecyclerView.Adapter<ReservationsAdapte
             AlertDialog alert = builder.create();
             alert.show();
 
-            act.loading.show();
+            /*act.loading.show();
             Call<ResponseObject> call = act.methods.deleteReservation(item.reservation_id);
             call.enqueue(new Callback<ResponseObject>() {
                 @Override
@@ -166,7 +178,7 @@ public class ReservationsAdapter extends RecyclerView.Adapter<ReservationsAdapte
                     act.loading.dismiss();
                     Toast.makeText(act, R.string.reservation_delete_failed, Toast.LENGTH_LONG).show();
                 }
-            });
+            });*/
 
 
         });

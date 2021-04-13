@@ -40,9 +40,11 @@
 
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/appbar"
+        android:visibility="invisible"
         android:fillViewport="true">
 
         <carbon.widget.LinearLayout
@@ -51,6 +53,7 @@
             android:orientation="vertical">
 
             <carbon.widget.RelativeLayout
+                android:id="@+id/mainContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -63,6 +66,7 @@
 
 
                 <carbon.widget.LinearLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/carbon_white_70"
