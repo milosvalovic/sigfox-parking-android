@@ -18,8 +18,18 @@
         android:roundIcon="@drawable/ic_parking_sign"
         android:supportsRtl="true"
         android:theme="@style/Theme.SigfoxParking">
-        <activity android:name=".activities.reservation.MyReservationsActivity"></activity>
-        <activity android:name=".activities.main.ARActivity"></activity>
+        <receiver android:name=".activities.ParkingWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/new_app_widget_info" />
+        </receiver>
+
+        <activity android:name=".activities.reservation.MyReservationsActivity" />
+        <activity android:name=".activities.main.ARActivity" />
         <activity android:name=".activities.reservation.AddCarActivity" />
         <activity android:name=".activities.auth.RegistrationActivity" />
         <activity android:name=".activities.auth.LoginActivity" />
@@ -38,6 +48,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/api_key" />
+
         <service
             android:name=".classes.MyFirebaseMessagingService"
             android:enabled="true"
@@ -46,10 +57,10 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_parking_sign" />
     </application>
-
 
 </manifest>
